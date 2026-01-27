@@ -67,7 +67,7 @@ if check_password():
                     # We use Gemini 1.5 Flash for speed and higher free limits
                     # If you need extreme accuracy, change to 'gemini-1.5-pro' 
                     # but be aware 'pro' has very low limits on the free tier (2 req/min).
-                    model = genai.GenerativeModel('gemini-1.5-flash')
+                    model = genai.GenerativeModel('gemini-flash-latest')
                     
                     prompt = """
                     You are an expert nutritionist. Analyze this image.
