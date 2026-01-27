@@ -74,7 +74,7 @@ def check_password():
 
 # --- MAIN APP ---
 if check_password():
-    st.title("🥗 Calorie Track AI")
+    st.title("🥗 Calorie Tracker")
     st.write("Snap a pic. Get the stats. Share the progress.")
 
     uploaded_file = st.file_uploader("Upload meal photo", type=["jpg", "jpeg", "png"])
@@ -84,10 +84,10 @@ if check_password():
         image = Image.open(uploaded_file)
         st.image(image, caption='Your Meal', use_column_width=True)
 
-        if st.button("Analyze & Generate Shareable"):
+        if st.button("Analyze"):
             with st.spinner('Calculating macros and generating watermark...'):
                 try:
-                    model = genai.GenerativeModel('gemini-1.5-flash')
+                    model = genai.GenerativeModel('gemini-flash-latest')
                     
                     # We ask for JSON specifically to parse the numbers easily
                     prompt = """
